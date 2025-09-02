@@ -1,40 +1,46 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
+  "name": "jekyll-theme-chirpy",
+  "version": "7.3.1",
+  "description": "A minimal, responsive, and feature-rich Jekyll theme for technical writing.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
+    "url": "git+https://github.com/cotes2020/jekyll-theme-chirpy.git"
   },
-  "keywords": [
-    "jekyll",
-    "theme",
-    "minimal"
-  ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
-  ],
+  "author": "Cotes Chung",
   "license": "MIT",
+  "since": 2019,
   "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+    "url": "https://github.com/cotes2020/jekyll-theme-chirpy/issues"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
-  "engines": {
-    "node": ">= 0.10.0"
+  "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy/",
+  "scripts": {
+    "build": "concurrently npm:build:*",
+    "build:css": "node purgecss.js",
+    "build:js": "rollup -c --bundleConfigAsCjs --environment BUILD:production",
+    "watch:js": "rollup -c --bundleConfigAsCjs -w"
   },
   "dependencies": {
-    "fitvids": "^2.1.1",
-    "jquery": "^3.7.1",
-    "jquery-smooth-scroll": "^2.2.0"
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.6"
   },
   "devDependencies": {
-    "onchange": "^7.1.0",
-    "uglify-js": "^3.17.4"
+    "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
+    "@babel/plugin-transform-private-methods": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "concurrently": "^9.1.2",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "purgecss": "^7.0.2",
+    "rollup": "^4.41.0",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard-scss": "^15.0.1"
   },
-  "scripts": {
-    "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/fitvids/dist/fitvids.min.js node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify"
-  }
+  "browserslist": [
+    "last 2 versions",
+    "> 0.2%",
+    "not dead"
+  ]
 }
