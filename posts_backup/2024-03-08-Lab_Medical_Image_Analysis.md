@@ -11,7 +11,7 @@ pin: false
 
 ## The Impact of Fiber Orientation Distribution Features on Direct White Matter Tract Segmentation
 
-This repository contains the code for the lab project "The Impact of Fiber Orientation Features on Direct White Matter Tract Segmentation". This project was developed within the lab "Visualization and Medical Image Analysis" at the University of Bonn during the winter semester 2023/2024.
+This project was developed within the lab "Visualization and Medical Image Analysis" at the University of Bonn during the winter semester 2023/2024.
 
 TractSeg is a tool for fast and accurate white matter bundle segmentation from Diffusion MRI, as originally proposed by Wasserthal et al. For a documentation of TractSeg please refer to the [original code repository](https://github.com/MIC-DKFZ/TractSeg) and the following publications:
 
